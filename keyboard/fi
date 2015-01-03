@@ -1,6 +1,12 @@
 //
 // X keyboard maps for Finland
 //
+// Modified by Tony. Remaps:
+//   1st left of backspace to /, with shift ^
+//   1st right of p to [, with shift {
+//   2nd right of p to ], with shift }
+//   1st left of 1 to Escape
+//
 // SFS 5966 / Kotoistus keymap created by Troy Korjuslommi
 // Classic keymap based on traditional by Marko Myllynen
 // Eliminate deadkeys alternative sent by Linus Torvalds
@@ -103,7 +109,7 @@ xkb_symbols "fi" {
 
     // Classic Finnish keyboard layout with dead keys
 
-    key <TLDE> { [  section,         onehalf,          onequarter,            threequarters         ] };
+    key <TLDE> { [  Escape,         onehalf,          onequarter,            threequarters         ] };
     key <AE01> { [  1,               exclam,           exclamdown,            onesuperior           ] };
     key <AE02> { [  2,               quotedbl,         at,                    twosuperior           ] };
     key <AE03> { [  3,               numbersign,       sterling,              threesuperior         ] };
