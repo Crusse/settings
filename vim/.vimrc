@@ -159,7 +159,6 @@ noremap <C-W><C-p> <C-W><C-k>
 noremap <C-W><C-l> <C-W><C-h>
 noremap <C-W>; <C-W><C-j>
 noremap <C-W>' <C-W><C-l>
-noremap <C-W><C-l> <C-W><C-h>
 " Paste with j
 noremap j p
 
