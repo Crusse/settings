@@ -19,6 +19,8 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+execute pathogen#infect()
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set expandtab
@@ -162,4 +164,16 @@ noremap <C-W>' <C-W><C-l>
 " Paste with j
 noremap j p
 
+augroup netrw_fix
+  autocmd!
+  autocmd filetype netrw call Fix_netrw_map()
+augroup END
+function! Fix_netrw_map()
+  noremap <buffer> p k
+  noremap <buffer> <C-W>p <C-W>k
+endfunction
+
+" Tagbar
+let g:tagbar_map_preview = "k"
+let g:tagbar_map_previewwin = "K"
 
