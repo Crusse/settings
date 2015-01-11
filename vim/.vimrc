@@ -19,7 +19,18 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-execute pathogen#infect()
+filetype off " required by Vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin on    " required
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -176,4 +187,17 @@ endfunction
 " Tagbar
 let g:tagbar_map_preview = "k"
 let g:tagbar_map_previewwin = "K"
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" NERDTree
+let NERDTreeMapJumpParent='k'
+let NERDTreeMapJumpRoot='K'
 
