@@ -144,7 +144,8 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-set visualbell
+set novisualbell
+set vb t_vb=
 set cursorline
 set ttyfast
 set laststatus=2
@@ -158,36 +159,6 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 
-" PLÖÄ master race
-noremap p k
-noremap l h
-noremap ö j
-noremap ä l
-" Change window with PLÖÄ
-noremap <C-W>p <C-W>k
-noremap <C-W>l <C-W>h
-noremap <C-W>ö <C-W>j
-noremap <C-W>ä <C-W>l
-noremap <C-W><C-p> <C-W><C-k>
-noremap <C-W><C-l> <C-W><C-h>
-noremap <C-W>; <C-W><C-j>
-noremap <C-W>' <C-W><C-l>
-" Paste with j
-noremap j p
-
-augroup netrw_fix
-  autocmd!
-  autocmd filetype netrw call Fix_netrw_map()
-augroup END
-function! Fix_netrw_map()
-  noremap <buffer> p k
-  noremap <buffer> <C-W>p <C-W>k
-endfunction
-
-" Tagbar
-let g:tagbar_map_preview = "k"
-let g:tagbar_map_previewwin = "K"
-
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -196,8 +167,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" NERDTree
-let NERDTreeMapJumpParent='k'
-let NERDTreeMapJumpRoot='K'
 
