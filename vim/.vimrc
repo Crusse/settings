@@ -1,9 +1,3 @@
-
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2011 Apr 15
-"
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
 "	      for Amiga:  s:.vimrc
@@ -29,6 +23,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin on    " required
@@ -172,5 +172,7 @@ let g:syntastic_check_on_wq = 0
 " C++
 nnoremap <C-S-C> :make %:r<CR>
 nnoremap <C-S-X> :!chmod +x %:r<CR>:!./%:r<CR>
+
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 
