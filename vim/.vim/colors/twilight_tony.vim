@@ -54,7 +54,7 @@ hi TabLineSel guifg=#ffffff guibg=#4f4a50 guisp=#4f4a50 gui=bold ctermfg=15 cter
 hi Number guifg=#ffcc24 guibg=NONE guisp=NONE gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
 hi Boolean guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 hi Operator guifg=#e0e2e4 guibg=NONE guisp=NONE gui=NONE ctermfg=254 ctermbg=NONE cterm=NONE
-hi CursorLine guifg=NONE guibg=#182028 guisp=#182028 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
+hi CursorLine guifg=NONE guibg=#1a1a1a guisp=#1a1a1a gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
 "hi Union -- no settings --
 hi TabLineFill guifg=#9098a0 guibg=NONE guisp=NONE gui=NONE ctermfg=247 ctermbg=NONE cterm=NONE
 hi Question guifg=#769fcf guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
@@ -62,7 +62,7 @@ hi Question guifg=#769fcf guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NON
 "hi VisualNOS -- no settings --
 "hi DiffDelete -- no settings --
 hi ModeMsg guifg=#e0e2e4 guibg=NONE guisp=NONE gui=NONE ctermfg=254 ctermbg=NONE cterm=NONE
-hi CursorColumn guifg=NONE guibg=#182028 guisp=#182028 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
+hi CursorColumn guifg=#e2e4e5 guibg=#1a1a1a guisp=#1a1a1a gui=NONE ctermfg=254 ctermbg=234 cterm=NONE
 hi Define guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 hi Function guifg=#e0e2e4 guibg=NONE guisp=NONE gui=NONE ctermfg=254 ctermbg=NONE cterm=NONE
 "hi FoldColumn -- no settings --
@@ -76,7 +76,7 @@ hi Exception guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NO
 hi Keyword guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 hi Type guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 "hi DiffChange -- no settings --
-hi Cursor guifg=NONE guibg=#3e4852 guisp=#3e4852 gui=NONE ctermfg=NONE ctermbg=239 cterm=NONE
+hi Cursor guifg=NONE guibg=#4d4d4d guisp=#4d4d4d gui=NONE ctermfg=NONE ctermbg=239 cterm=NONE
 "hi SpellLocal -- no settings --
 "hi Error -- no settings --
 hi PMenu guifg=#ffffff guibg=#3c393d guisp=#3c393d gui=NONE ctermfg=15 ctermbg=237 cterm=NONE
