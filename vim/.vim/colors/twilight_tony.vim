@@ -21,7 +21,7 @@ hi Folded guifg=#a0a8b0 guibg=#384048 guisp=#384048 gui=NONE ctermfg=103 ctermbg
 hi PreCondit guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 hi Include guifg=#cda869 guibg=NONE guisp=NONE gui=NONE ctermfg=179 ctermbg=NONE cterm=NONE
 hi Float guifg=#ffcc24 guibg=NONE guisp=NONE gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
-hi StatusLineNC guifg=#005faf guibg=#00005f guisp=#00005f gui=NONE ctermfg=25 ctermbg=17 cterm=NONE
+hi StatusLineNC guifg=#828282 guibg=#2e2e2e guisp=#2e2e2e gui=NONE ctermfg=8 ctermbg=236 cterm=NONE
 "hi CTagsMember -- no settings --
 hi NonText guifg=#474747 guibg=NONE guisp=NONE gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
 "hi CTagsGlobalConstant -- no settings --
@@ -37,7 +37,7 @@ hi StorageClass guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg
 hi Todo guifg=#000000 guibg=#ffd900 guisp=#ffd900 gui=bold ctermfg=NONE ctermbg=220 cterm=bold
 hi Special guifg=#e8e2b7 guibg=NONE guisp=NONE gui=NONE ctermfg=187 ctermbg=NONE cterm=NONE
 hi LineNr guifg=#5e5d5e guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
-hi StatusLine guifg=#a8dcff guibg=#2a69b0 guisp=#2a69b0 gui=NONE ctermfg=153 ctermbg=25 cterm=NONE
+hi StatusLine guifg=#e0d7bc guibg=#4f4f4f guisp=#4f4f4f gui=NONE ctermfg=187 ctermbg=239 cterm=NONE
 hi Normal guifg=#e0e2e4 guibg=#0b0b0b guisp=#0b0b0b gui=NONE ctermfg=254 ctermbg=232 cterm=NONE
 hi Label guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 "hi CTagsImport -- no settings --
@@ -71,7 +71,7 @@ hi PreProc guifg=#b5eb7f guibg=NONE guisp=NONE gui=bold ctermfg=192 ctermbg=NONE
 "hi Visual -- no settings --
 "hi MoreMsg -- no settings --
 "hi SpellCap -- no settings --
-hi VertSplit guifg=#323033 guibg=#323033 guisp=#323033 gui=italic ctermfg=236 ctermbg=236 cterm=NONE
+hi VertSplit guifg=#1c1c1c guibg=#1c1c1c guisp=#1c1c1c gui=italic ctermfg=234 ctermbg=234 cterm=NONE
 hi Exception guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 hi Keyword guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 hi Type guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
