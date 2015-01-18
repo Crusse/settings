@@ -55,8 +55,10 @@ set ignorecase
 set smartcase
 set gdefault
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
+set guioptions-=m  "menu bar
+set guioptions-=T  "toolbar
+set guioptions-=r  "scrollbar
+set guioptions-=L  "left scrollbar
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -140,6 +142,8 @@ set wildmenu
 set wildmode=list:longest
 set novisualbell
 set vb t_vb=
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 set cursorline
 set ttyfast
 set laststatus=2
@@ -160,6 +164,8 @@ endif
 nnoremap / /\v
 vnoremap / /\v
 
+map <Space> <Leader>
+
 set wrap
 set textwidth=79
 set formatoptions=qrn1
@@ -173,10 +179,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" C++
-nnoremap <C-S-C> :make %:r<CR>
-nnoremap <C-S-X> :!chmod +x %:r<CR>:!./%:r<CR>
-
+" CtrlP
 let g:ctrlp_cmd = 'CtrlPMixed'
+nnoremap <Leader>p :CtrlPBufTagAll<CR>
+
+" C++
+nnoremap <Leader>c :make %:r<CR>
+nnoremap <Leader>x :!chmod +x %:r<CR>:!./%:r<CR>
+
 
 
