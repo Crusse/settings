@@ -15,7 +15,12 @@ set nocompatible
 
 filetype off " required by Vundle
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+if has("win32") || has("win16") || has("win32unix") || has("win64")
+  set rtp+=~/vimfiles/bundle/Vundle.vim
+  let path='~/vimfiles/bundle'
+else
+  set rtp+=~/.vim/bundle/Vundle.vim
+endif
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -116,19 +121,7 @@ endif
 
 colorscheme twilight_tony
 
-if has("win32") || has("win16") || has("win32unix") || has("win64")
-  set guifont=Consolas:h11:cDEFAULT
-  let Tlist_Ctags_Cmd = '"D:\Program Files (x86)\Vim\ctags58\ctags.exe"'
-  silent !mkdir -p C:\Users\Crusse\vim_undos
-  set undodir=C:\Users\Crusse\vim_undos
-else
-  silent !mkdir -p ~/.vim/undos
-  set undodir=~/.vim/undos
-endif
-
-set undofile
-
-highlight ExtraWhitespace ctermbg=52 guibg=52
+highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
 match ExtraWhitespace /\S\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\S\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\S\s\+\%#\@<!$/
@@ -151,6 +144,17 @@ set cursorline
 set ttyfast
 set laststatus=2
 set relativenumber
+set guicursor+=n-v-c-i:blinkon0
+set undofile
+
+if has("win32") || has("win16") || has("win32unix") || has("win64")
+  set guifont=Consolas:h11:cDEFAULT
+  silent !mkdir -p C:\Users\Crusse\vim_undos
+  set undodir=C:\Users\Crusse\vim_undos
+else
+  silent !mkdir -p ~/.vim/undos
+  set undodir=~/.vim/undos
+endif
 
 " Make regex searches sane
 nnoremap / /\v
