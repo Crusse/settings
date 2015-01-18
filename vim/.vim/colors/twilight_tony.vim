@@ -21,7 +21,7 @@ hi Folded guifg=#a0a8b0 guibg=#384048 guisp=#384048 gui=NONE ctermfg=103 ctermbg
 hi PreCondit guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 hi Include guifg=#cda869 guibg=NONE guisp=NONE gui=NONE ctermfg=179 ctermbg=NONE cterm=NONE
 hi Float guifg=#ffcc24 guibg=NONE guisp=NONE gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
-hi StatusLineNC guifg=#828282 guibg=#2e2e2e guisp=#2e2e2e gui=NONE ctermfg=8 ctermbg=236 cterm=NONE
+hi StatusLineNC guifg=#999999 guibg=#2e2e2e guisp=#2e2e2e gui=NONE ctermfg=246 ctermbg=236 cterm=NONE
 "hi CTagsMember -- no settings --
 hi NonText guifg=#474747 guibg=NONE guisp=NONE gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
 "hi CTagsGlobalConstant -- no settings --
@@ -37,7 +37,7 @@ hi StorageClass guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg
 hi Todo guifg=#000000 guibg=#ffd900 guisp=#ffd900 gui=bold ctermfg=NONE ctermbg=220 cterm=bold
 hi Special guifg=#e8e2b7 guibg=NONE guisp=NONE gui=NONE ctermfg=187 ctermbg=NONE cterm=NONE
 hi LineNr guifg=#5e5d5e guibg=NONE guisp=NONE gui=NONE ctermfg=59 ctermbg=NONE cterm=NONE
-hi StatusLine guifg=#e0d7bc guibg=#4f4f4f guisp=#4f4f4f gui=NONE ctermfg=187 ctermbg=239 cterm=NONE
+hi StatusLine guifg=#ededed guibg=#4f4f4f guisp=#4f4f4f gui=NONE ctermfg=255 ctermbg=239 cterm=NONE
 hi Normal guifg=#e0e2e4 guibg=#0b0b0b guisp=#0b0b0b gui=NONE ctermfg=254 ctermbg=232 cterm=NONE
 hi Label guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 "hi CTagsImport -- no settings --
@@ -54,7 +54,7 @@ hi TabLineSel guifg=#ffffff guibg=#4f4a50 guisp=#4f4a50 gui=bold ctermfg=15 cter
 hi Number guifg=#ffcc24 guibg=NONE guisp=NONE gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
 hi Boolean guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 hi Operator guifg=#e0e2e4 guibg=NONE guisp=NONE gui=NONE ctermfg=254 ctermbg=NONE cterm=NONE
-hi CursorLine guifg=NONE guibg=#1a1a1a guisp=#1a1a1a gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
+hi CursorLine guifg=NONE guibg=#1c1c1c guisp=#1c1c1c gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
 "hi Union -- no settings --
 hi TabLineFill guifg=#9098a0 guibg=NONE guisp=NONE gui=NONE ctermfg=247 ctermbg=NONE cterm=NONE
 hi Question guifg=#769fcf guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
@@ -62,7 +62,7 @@ hi Question guifg=#769fcf guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NON
 "hi VisualNOS -- no settings --
 "hi DiffDelete -- no settings --
 hi ModeMsg guifg=#e0e2e4 guibg=NONE guisp=NONE gui=NONE ctermfg=254 ctermbg=NONE cterm=NONE
-hi CursorColumn guifg=#e2e4e5 guibg=#1a1a1a guisp=#1a1a1a gui=NONE ctermfg=254 ctermbg=234 cterm=NONE
+hi CursorColumn guifg=#e2e4e5 guibg=#1c1c1c guisp=#1c1c1c gui=NONE ctermfg=254 ctermbg=234 cterm=NONE
 hi Define guifg=#b5eb7f guibg=NONE guisp=NONE gui=NONE ctermfg=192 ctermbg=NONE cterm=NONE
 hi Function guifg=#e0e2e4 guibg=NONE guisp=NONE gui=NONE ctermfg=254 ctermbg=NONE cterm=NONE
 "hi FoldColumn -- no settings --
