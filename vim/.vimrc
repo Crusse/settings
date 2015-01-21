@@ -153,7 +153,7 @@ set undofile
 
 if has("win32") || has("win16") || has("win32unix") || has("win64")
   set guifont=Consolas:h11:cDEFAULT
-  silent !mkdir -p C:\Users\Crusse\vim_undos
+  silent !mkdir C:\Users\Crusse\vim_undos
   set undodir=C:\Users\Crusse\vim_undos
 else
   silent !mkdir -p ~/.vim/undos
