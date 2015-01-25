@@ -153,11 +153,15 @@ set undofile
 
 if has("win32") || has("win16") || has("win32unix") || has("win64")
   set guifont=Consolas:h11:cDEFAULT
-  silent !mkdir C:\Users\Crusse\vim_undos
-  set undodir=C:\Users\Crusse\vim_undos
+  silent !mkdir "\%USERPROFILE\%\vim_undos"
+  set undodir='~\vim_undos'
+  silent !mkdir "\%USERPROFILE\%\vim_tags"
+  let g:easytags_by_filetype = '~\vim_tags'
 else
   silent !mkdir -p ~/.vim/undos
   set undodir=~/.vim/undos
+  silent !mkdir -p ~/.vim/tags
+  let g:easytags_by_filetype = '~/.vim/tags'
 endif
 
 " Make regex searches sane
@@ -170,6 +174,8 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 
+set autochdir " change cwd to current file's dir automatically
+
 " Syntastic
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -181,7 +187,11 @@ let g:syntastic_check_on_wq = 0
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlPMixed'
+
+" easytags
+let g:easytags_auto_highlight = 0
 nnoremap <Leader>p :CtrlPBufTagAll<CR>
+nnoremap <S-F5> :UpdateTags -R<CR>
 
 " C++
 nnoremap <Leader>c :make %:r<CR>
