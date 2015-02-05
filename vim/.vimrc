@@ -145,11 +145,13 @@ set novisualbell
 set vb t_vb=
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
-set cursorline
 set ttyfast
 set laststatus=2
-set relativenumber
+set number
+set cursorline
 set guicursor+=n-v-c-i:blinkon0
+" hide cursorline when in insert mode
+autocmd InsertEnter,InsertLeave * set cul!
 set undofile
 
 if has("win32") || has("win16") || has("win32unix") || has("win64")
