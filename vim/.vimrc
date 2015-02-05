@@ -170,10 +170,15 @@ nnoremap / /\v
 vnoremap / /\v
 
 map <Space> <Leader>
+" save with Ctrl-S
+nnoremap <C-S> :w<CR>
+inoremap <C-S> :w<CR>
 
 set wrap
 set textwidth=79
 set formatoptions=qrn1
+" yank to system clipboard by default
+set clipboard=unnamed,unnamedplus
 
 set autochdir " change cwd to current file's dir automatically
 
@@ -197,6 +202,4 @@ nnoremap <S-F5> :UpdateTags -R<CR>
 " C++
 nnoremap <Leader>c :make %:r<CR>
 nnoremap <Leader>x :!chmod +x %:r<CR>:!./%:r<CR>
-
-
 
