@@ -161,6 +161,7 @@ if has("win32") || has("win16") || has("win32unix") || has("win64")
   silent !mkdir "\%USERPROFILE\%\vim_tags"
   let g:easytags_by_filetype = '~\vim_tags'
 else
+  set guifont=Monaco:h12
   silent !mkdir -p ~/.vim/undos
   set undodir=~/.vim/undos
   silent !mkdir -p ~/.vim/tags
