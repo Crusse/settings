@@ -144,7 +144,8 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-set visualbell
+" no beeping or visual bell
+set vb t_vb=
 set cursorline
 set ttyfast
 set laststatus=2
@@ -189,15 +190,18 @@ let g:tagbar_map_preview = "k"
 let g:tagbar_map_previewwin = "K"
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 " NERDTree
 let NERDTreeMapJumpParent='k'
 let NERDTreeMapJumpRoot='K'
+
+" C++
+nnoremap <C-S-C> :make %:r<CR>
+nnoremap <C-S-X> :!chmod +x %:r<CR>:!./%:r<CR>
 
