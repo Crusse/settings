@@ -1,9 +1,3 @@
-
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2011 Apr 15
-"
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
 "	      for Amiga:  s:.vimrc
@@ -21,13 +15,26 @@ set nocompatible
 
 filetype off " required by Vundle
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+if has("win32") || has("win16") || has("win32unix") || has("win64")
+  set rtp+=~/vimfiles/bundle/Vundle.vim
+  let path='~/vimfiles/bundle'
+else
+  set rtp+=~/.vim/bundle/Vundle.vim
+endif
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'Shougo/neocomplete.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin on    " required
@@ -49,8 +56,10 @@ set ignorecase
 set smartcase
 set gdefault
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
+set guioptions-=m  "menu bar
+set guioptions-=T  "toolbar
+set guioptions-=r  "scrollbar
+set guioptions-=L  "left scrollbar
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -115,19 +124,7 @@ endif
 
 colorscheme twilight_tony
 
-if has("win32") || has("win16") || has("win32unix") || has("win64")
-  set guifont=Consolas:h11:cDEFAULT
-  let Tlist_Ctags_Cmd = '"D:\Program Files (x86)\Vim\ctags58\ctags.exe"'
-  silent !mkdir -p C:\Users\Crusse\vim_undos
-  set undodir=C:\Users\Crusse\vim_undos
-else
-  silent !mkdir -p ~/.vim/undos
-  set undodir=~/.vim/undos
-endif
-
-set undofile
-
-highlight ExtraWhitespace ctermbg=52 guibg=52
+highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
 match ExtraWhitespace /\S\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\S\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\S\s\+\%#\@<!$/
@@ -145,51 +142,54 @@ set hidden
 set wildmenu
 set wildmode=list:longest
 " no beeping or visual bell
+set novisualbell
 set vb t_vb=
-set cursorline
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 set ttyfast
 set laststatus=2
-set relativenumber
+set number
+set cursorline
+set guicursor+=n-v-c-i:blinkon0
+" hide cursorline when in insert mode
+autocmd InsertEnter,InsertLeave * set cul!
+set undofile
+
+if has("win32") || has("win16") || has("win32unix") || has("win64")
+  set guifont=Consolas:h11:cDEFAULT
+  silent !mkdir "\%USERPROFILE\%\vim_undos"
+  set undodir='~\vim_undos'
+  silent !mkdir "\%USERPROFILE\%\vim_tags"
+  let g:easytags_by_filetype = '~\vim_tags'
+else
+  set guifont=Monaco:h12
+  silent !mkdir -p ~/.vim/undos
+  set undodir=~/.vim/undos
+  silent !mkdir -p ~/.vim/tags
+  let g:easytags_by_filetype = '~/.vim/tags'
+endif
 
 " Make regex searches sane
 nnoremap / /\v
 vnoremap / /\v
 
+map <Space> <Leader>
+" save with Ctrl-S
+nnoremap <C-S> :w<CR>
+inoremap <C-S> :w<CR>
+
 set wrap
 set textwidth=79
 set formatoptions=qrn1
+" yank to system clipboard by default
+set clipboard=unnamed,unnamedplus
 
-" PLÖÄ master race
-noremap p k
-noremap l h
-noremap ö j
-noremap ä l
-" Change window with PLÖÄ
-noremap <C-W>p <C-W>k
-noremap <C-W>l <C-W>h
-noremap <C-W>ö <C-W>j
-noremap <C-W>ä <C-W>l
-noremap <C-W><C-p> <C-W><C-k>
-noremap <C-W><C-l> <C-W><C-h>
-noremap <C-W>; <C-W><C-j>
-noremap <C-W>' <C-W><C-l>
-" Paste with j
-noremap j p
-
-augroup netrw_fix
-  autocmd!
-  autocmd filetype netrw call Fix_netrw_map()
-augroup END
-function! Fix_netrw_map()
-  noremap <buffer> p k
-  noremap <buffer> <C-W>p <C-W>k
-endfunction
-
-" Tagbar
-let g:tagbar_map_preview = "k"
-let g:tagbar_map_previewwin = "K"
+set autochdir " change cwd to current file's dir automatically
 
 " Syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -197,9 +197,17 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
-" NERDTree
-let NERDTreeMapJumpParent='k'
-let NERDTreeMapJumpRoot='K'
+" CtrlP
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+" easytags
+let g:easytags_auto_highlight = 0
+nnoremap <Leader>p :CtrlPBufTagAll<CR>
+nnoremap <S-F5> :UpdateTags -R<CR>
+
+" C++
+nnoremap <Leader>c :make %:r<CR>
+nnoremap <Leader>x :!chmod +x %:r<CR>:!./%:r<CR>
 
 " C++
 nnoremap <C-S-C> :make %:r<CR>
