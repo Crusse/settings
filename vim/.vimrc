@@ -131,6 +131,7 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
+" no beeping or visual bell
 set novisualbell
 set vb t_vb=
 set noerrorbells visualbell t_vb=
@@ -151,6 +152,7 @@ if has("win32") || has("win16") || has("win32unix") || has("win64")
   " silent !mkdir "\%USERPROFILE\%\vim_tags"
   " let g:easytags_by_filetype = '~\vim_tags'
 else
+  set guifont=Monaco:h12
   silent !mkdir -p ~/.vim/undos
   set undodir=~/.vim/undos
   " silent !mkdir -p ~/.vim/tags
@@ -179,6 +181,8 @@ set autochdir " change cwd to current file's dir automatically
 
 map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
 map <F3> :source ~/.vim_session <cr>     " And load session with F3
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -192,4 +196,3 @@ nnoremap <Leader>p :CtrlPBufTagAll<CR>
 " C++
 nnoremap <Leader>c :make %:r<CR>
 nnoremap <Leader>x :!chmod +x %:r<CR>:!./%:r<CR>
-
