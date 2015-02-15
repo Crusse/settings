@@ -1,8 +1,8 @@
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
+"        for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+"      for OpenVMS:  sys$login:.vimrc
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -24,20 +24,15 @@ endif
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'Shougo/neocomplete.vim'
+" Plugin 'xolox/vim-easytags' " ctags is awkward...
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin on    " required
+call vundle#end() " required
+filetype plugin on " required
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -46,12 +41,12 @@ set tabstop=2
 set shiftwidth=2
 
 set noswapfile
-set nobackup		" do not keep a backup file, use versions instead
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-set ic			" case insensitivity when searching
+set nobackup    " do not keep a backup file, use versions instead
+set history=50    " keep 50 lines of command line history
+set ruler    " show the cursor position all the time
+set showcmd    " display incomplete commands
+set incsearch    " do incremental searching
+set ic      " case insensitivity when searching
 set ignorecase
 set smartcase
 set gdefault
@@ -110,7 +105,7 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
+  set autoindent    " always set autoindenting on
 
 endif " has("autocmd")
 
@@ -119,17 +114,12 @@ endif " has("autocmd")
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+      \ | wincmd p | diffthis
 endif
 
-colorscheme twilight_tony
-
-highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
-match ExtraWhitespace /\S\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\S\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\S\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\S\s\+$/
-autocmd BufWinLeave * call clearmatches()
+" colorscheme twilight_tony
+set background=light
+colorscheme solarized
 
 " Prevent a Vim security exploit
 set modelines=0
@@ -158,13 +148,13 @@ if has("win32") || has("win16") || has("win32unix") || has("win64")
   set guifont=Consolas:h11:cDEFAULT
   silent !mkdir "\%USERPROFILE\%\vim_undos"
   set undodir='~\vim_undos'
-  silent !mkdir "\%USERPROFILE\%\vim_tags"
-  let g:easytags_by_filetype = '~\vim_tags'
+  " silent !mkdir "\%USERPROFILE\%\vim_tags"
+  " let g:easytags_by_filetype = '~\vim_tags'
 else
   silent !mkdir -p ~/.vim/undos
   set undodir=~/.vim/undos
-  silent !mkdir -p ~/.vim/tags
-  let g:easytags_by_filetype = '~/.vim/tags'
+  " silent !mkdir -p ~/.vim/tags
+  " let g:easytags_by_filetype = '~/.vim/tags'
 endif
 
 " Make regex searches sane
@@ -175,31 +165,29 @@ map <Space> <Leader>
 " save with Ctrl-S
 nnoremap <C-S> :w<CR>
 inoremap <C-S> :w<CR>
+" replace selection with C-r
+vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 
 set wrap
 set textwidth=79
 set formatoptions=qrn1
 " yank to system clipboard by default
 set clipboard=unnamed,unnamedplus
-
+set splitright
+set splitbelow
 set autochdir " change cwd to current file's dir automatically
 
-" Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
+map <F3> :source ~/.vim_session <cr>     " And load session with F3
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlPMixed'
+nnoremap <Leader>p :CtrlPBufTagAll<CR>
 
 " easytags
-let g:easytags_auto_highlight = 0
-nnoremap <Leader>p :CtrlPBufTagAll<CR>
-nnoremap <S-F5> :UpdateTags -R<CR>
+" let g:easytags_auto_highlight = 0
+" let g:easytags_dynamic_files = 1
+" nnoremap <S-F5> :UpdateTags -R<CR>
 
 " C++
 nnoremap <Leader>c :make %:r<CR>
