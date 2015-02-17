@@ -120,6 +120,7 @@ endif
 " colorscheme twilight_tony
 set background=light
 colorscheme solarized
+AirlineTheme light
 
 " Prevent a Vim security exploit
 set modelines=0
@@ -177,7 +178,6 @@ set formatoptions=qrn1
 set clipboard=unnamed,unnamedplus
 set splitright
 set splitbelow
-set autochdir " change cwd to current file's dir automatically
 
 map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
 map <F3> :source ~/.vim_session <cr>     " And load session with F3
@@ -185,8 +185,11 @@ let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 " CtrlP
-let g:ctrlp_cmd = 'CtrlPMixed'
-nnoremap <Leader>p :CtrlPBufTagAll<CR>
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_switch_buffer = 'ETVH'
+let g:ctrlp_working_path_mode = 'ra'
+nnoremap <Leader>t :CtrlPBufTagAll<CR>
+nnoremap <Leader>r :CtrlPMRUFiles<CR>
 
 " easytags
 " let g:easytags_auto_highlight = 0
