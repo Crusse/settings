@@ -120,7 +120,6 @@ endif
 " colorscheme twilight_tony
 set background=light
 colorscheme solarized
-AirlineTheme light
 
 " Prevent a Vim security exploit
 set modelines=0
@@ -137,6 +136,7 @@ set novisualbell
 set vb t_vb=
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
+autocmd VIMEnter * :AirlineTheme light
 set ttyfast
 set laststatus=2
 set number
@@ -174,8 +174,6 @@ vnoremap <C-r> "hy:%s/<C-r>h//g<left><left>
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-" yank to system clipboard by default
-set clipboard=unnamed,unnamedplus
 set splitright
 set splitbelow
 
