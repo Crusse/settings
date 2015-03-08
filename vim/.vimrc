@@ -117,10 +117,10 @@ if !exists(":DiffOrig")
       \ | wincmd p | diffthis
 endif
 
-" colorscheme twilight_tony
-set background=light
-colorscheme solarized
-AirlineTheme light
+colorscheme twilight_tony
+" set background=light
+" colorscheme solarized
+" AirlineTheme light
 
 " Prevent a Vim security exploit
 set modelines=0
