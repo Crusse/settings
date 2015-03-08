@@ -120,7 +120,6 @@ endif
 colorscheme twilight_tony
 " set background=light
 " colorscheme solarized
-" AirlineTheme light
 
 " Prevent a Vim security exploit
 set modelines=0
@@ -137,7 +136,7 @@ set novisualbell
 set vb t_vb=
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
-autocmd VIMEnter * :AirlineTheme light
+" autocmd VIMEnter * :AirlineTheme light
 set ttyfast
 set laststatus=2
 set number
