@@ -195,7 +195,7 @@ nnoremap <Leader>r :CtrlPMRUFiles<CR>
 " nnoremap <S-F5> :UpdateTags -R<CR>
 
 " C++
-nnoremap <Leader>c :!g++ -Wall -std=c++11 %<CR>
+nnoremap <Leader>c :!g++ -Wall -std=c++11 -o %:r %<CR>
 nnoremap <Leader>x :!chmod +x %:r<CR>:!./%:r<CR>
 
 
