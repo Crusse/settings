@@ -1,11 +1,13 @@
 //
-// X keyboard maps for Finland
+// X keyboard maps for Finland (Linux X11 keyboard mapping)
 //
 // Modified by Tony. Remaps:
-//   1st left of backspace to /, with shift ^
+//   1st left of backspace to /, with shift ^, with alt `
 //   1st right of p to [, with shift {
 //   2nd right of p to ], with shift }
 //   1st left of 1 to Escape
+//
+// Put this file in /usr/share/X11/xkb/symbols/
 //
 // SFS 5966 / Kotoistus keymap created by Troy Korjuslommi
 // Classic keymap based on traditional by Marko Myllynen
@@ -41,7 +43,7 @@ xkb_symbols "kotoistus" {
     key <AE09> { [  9,               parenright,       bracketright,          greater               ] };
     key <AE10> { [  0,               equal,            braceright,            degree                ] };
     key <AE11> { [  plus,            question,         backslash,             questiondown          ] };
-    key <AE12> { [  slash,           asciicircum,       NoSymbol,              NoSymbol              ] };
+    key <AE12> { [  slash,           asciicircum,       grave,              NoSymbol              ] };
 
     key <AD01> { [  q,               Q,                q,                     Q                     ] };
     key <AD02> { [  w,               W,                w,                     W                     ] };
@@ -121,7 +123,7 @@ xkb_symbols "fi" {
     key <AE09> { [  9,               parenright,       bracketright,          greater               ] };
     key <AE10> { [  0,               equal,            braceright,            degree                ] };
     key <AE11> { [  plus,            question,         backslash,             questiondown          ] };
-    key <AE12> { [  slash,           asciicircum,       NoSymbol,              NoSymbol              ] };
+    key <AE12> { [  slash,           asciicircum,       grave,              NoSymbol              ] };
 
     key <AD01> { [  q,               Q,                q,                     Q                     ] };
     key <AD02> { [  w,               W,                w,                     W                     ] };
