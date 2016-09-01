@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE keyboard PUBLIC "" "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Created by Ukelele version 2.2.8 on 2015-01-07 at 12:13 (EET)-->
-<!--Last edited by Ukelele version 2.2.8 on 2015-01-07 at 12:24 (EET)-->
+<!--Last edited by Ukelele version 2.2.8 on 2016-09-01 at 14:48 (GMT+3)-->
 <keyboard group="0" id="15046" name="Finnish" maxout="1">
     <layouts>
         <layout first="0" last="0" modifiers="4c" mapSet="96c"/>
@@ -434,7 +434,7 @@
             <key code="21" output="$"/>
             <key code="22" output="§"/>
             <key code="23" output="∞"/>
-            <key code="24" output="´"/>
+            <key code="24" output="`"/>
             <key code="25" output="]"/>
             <key code="26" output="|"/>
             <key code="27" output="±"/>
