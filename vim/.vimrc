@@ -140,10 +140,8 @@ autocmd GUIEnter * set visualbell t_vb=
 set ttyfast
 set laststatus=2
 set number
-set cursorline
+set nocursorline
 set guicursor+=n-v-c-i:blinkon0
-" hide cursorline when in insert mode
-autocmd InsertEnter,InsertLeave * set cul!
 set undofile
 
 if has("win32") || has("win16") || has("win32unix") || has("win64")
